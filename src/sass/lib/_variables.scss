@@ -1,9 +1,22 @@
 // Colors
-$primary-color: blue;
-$secondary-color: grey;
-$footer-pc: blue;
-$footer-sc: rgb(13, 13, 107);
+$color-primary: blue;
+$color-secondary: grey;
 $color-title: grey;
+
+// Colors messages
+$color-success: #28a745;
+$color-warning: #ffc107;
+$color-info: #17a2b8;
+$color-dark: #343a40;
+$color-white: #fff;
+
+// tipografia
+$basefont: sans-serif;
+$basefontsize: 16px;
+
+// de esta manera lo puedo setear ya que ese color lo tengo en una variable
+$buttomcolor: $color-info;
+$buttombackgroundcolor: $color-dark;
 
 
 
