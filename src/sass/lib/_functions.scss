@@ -67,7 +67,6 @@ $icons:(
 }
 // Esta es una manera realmente eficiente de cargar clases
 
-
 //Otro caso de uso es con los z-index
     @function layer($key) {
 
@@ -81,4 +80,13 @@ $icons:(
 
 .name2{
     z-index: layer(father);
+}
+
+// @for $i from start to end {
+@for $i from 1 to 5 {
+       .class{
+            &:before{
+                content: "#{$i}";
+            }
+       } 
 }

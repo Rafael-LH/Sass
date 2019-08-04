@@ -1,7 +1,6 @@
 @import "./lib/variables";
 @import "./lib/clases";
 @import "./lib/functions";
-
 @import "./mixins/mixin";
 
 body{
@@ -23,6 +22,7 @@ body{
             cursor: pointer;
             // funcion sumPadding que resive dos valores
             padding: sumPadding(10px, 5px);
+            // este es un vloque de contenido que nos permite crear los mixin
             @include repond-to-hover($color-dark){
                 color: $color-info; 
             } 
@@ -61,3 +61,23 @@ a{
            }
        }
 }
+
+
+//Grid 
+.container-info{
+        display: grid;
+        grid-template: repeat(1, 1fr) / repeat(12, 1fr);
+        margin-bottom: 20px;
+
+        @for $i from 1 to 13 {
+            .article#{$i}{
+                    @if($i < 7){
+                            color: $color-info;
+                    }@else{
+                            color: $color-warning;
+                    }
+            }
+        }
+}
+
+
