@@ -6,3 +6,17 @@
     flex-wrap: $wrap;
     border: 1px solid red;
 }
+
+@mixin respond-to($sm) {
+
+    @media screen and (max-width: $sm){
+           @content;
+    }
+
+}
+
+@mixin repond-to-hover($color-dark) {
+        &:hover{
+            @content;
+        }
+}

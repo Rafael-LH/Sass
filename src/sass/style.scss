@@ -1,4 +1,5 @@
 @import "./lib/variables";
+@import "./lib/clases";
 @import "./mixins/mixin";
 
 body{
@@ -8,7 +9,24 @@ body{
 
 .container{
     width: 100%;
+    @include respond-to($sm){
+        background-color: red;
+        .container-sub{
+           color: #fff;
+        }
+    } 
     .container-sub{
         @include  FlexContent(flex, center, wrap, auto);
+        @extend %styles-ul;
+        li{
+            cursor: pointer;
+            padding: 10px;
+            @include repond-to-hover($color-dark){
+                color: $color-info; 
+            } 
+        }
     }
+}
+a{
+    @extend %styles-a;
 }

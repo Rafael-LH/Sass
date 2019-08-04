@@ -1,0 +1,18 @@
+
+// tener clases es muy bueno ya que estamos reutilizando css y lo que hace sass a la hora de compilar 
+// es tener un bloque de css el cual esta compuesto por varios selectores que a su vez ellos heredan las propiedades 
+//que mi clase extiende
+
+%styles-ul{
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+}
+
+%styles-a{
+    text-decoration: none;
+    color: initial;
+    font-size: $basefontsize + 10;
+}
+
+
