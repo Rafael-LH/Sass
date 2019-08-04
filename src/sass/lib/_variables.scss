@@ -13,10 +13,13 @@ $color-white: #fff;
 // tipografia
 $basefont: sans-serif;
 $basefontsize: 16px;
+$pageMaxWidth: 980px;
+$basePaddingxy: 0px 10px;
 
 // de esta manera lo puedo setear ya que ese color lo tengo en una variable
 $buttomcolor: $color-info;
 $buttombackgroundcolor: $color-dark;
+
 
 
 

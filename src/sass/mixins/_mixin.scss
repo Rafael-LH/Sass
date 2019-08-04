@@ -1,0 +1,8 @@
+@mixin FlexContent($display, $justify, $wrap, $margin) {
+    max-width: $pageMaxWidth;
+    margin: $margin;
+    display: $display; 
+    justify-content: $justify; 
+    flex-wrap: $wrap;
+    border: 1px solid red;
+}
