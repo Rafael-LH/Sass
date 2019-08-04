@@ -2,7 +2,10 @@
 // tener clases es muy bueno ya que estamos reutilizando css y lo que hace sass a la hora de compilar 
 // es tener un bloque de css el cual esta compuesto por varios selectores que a su vez ellos heredan las propiedades 
 //que mi clase extiende
-
+%styles-body{
+    padding: 0px;
+    margin: 0px;
+}
 %styles-ul{
     padding: 0px;
     margin: 0px;

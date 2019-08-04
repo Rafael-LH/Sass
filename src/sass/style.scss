@@ -1,10 +1,11 @@
 @import "./lib/variables";
 @import "./lib/clases";
+@import "./lib/functions";
+
 @import "./mixins/mixin";
 
 body{
-    padding: 0px;
-    margin: 0px;
+    @extend %styles-body;
 }
 
 .container{
@@ -20,7 +21,8 @@ body{
         @extend %styles-ul;
         li{
             cursor: pointer;
-            padding: 10px;
+            // funcion sumPadding que resive dos valores
+            padding: sumPadding(10px, 5px);
             @include repond-to-hover($color-dark){
                 color: $color-info; 
             } 
@@ -29,4 +31,17 @@ body{
 }
 a{
     @extend %styles-a;
+}
+
+.title-big{
+    font-size: map-get($fs, big);
+}
+.title-normal{
+    font-size:  map-get($fs, normal);
+}
+.title-small{
+    font-size:  map-get($fs, small);
+}
+.title-x-small{
+    font-size: map-get($fs, x-small);
 }

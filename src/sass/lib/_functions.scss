@@ -1,0 +1,18 @@
+//Functions
+// Las funciones nos permiten directamente modificar el valor de ciertas propiedades.
+// Para crear una función vamos a usar el @function.
+@function sumPadding($num1, $num2){
+    @return $num1 + $num2;
+}
+
+// Las funciones también puede ser extraer valores de un array.
+// Una función puede utilizar arrays que son más parecidas a listas.
+// Para Sass es más un mapa.
+// En esta clase vamos a aprender a usar mapas con los posibles tipos de fuentes que hayan.
+
+$fs:(
+    big: 24px,
+    normal: 16px,
+    small: 14px,
+    x-small: 12px,
+);
