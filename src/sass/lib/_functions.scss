@@ -16,3 +16,69 @@ $fs:(
     small: 14px,
     x-small: 12px,
 );
+
+// en que podemos utilizar esto ?
+// 1- Los dropdown que contenga mi proyecto.
+// 2- Los elementos sticky.
+// 3- Los modales
+// 4- El overlay de cada modal
+// 5- Los tooltip
+$zindex:(
+    father: 3,
+    subfather: 2,
+    child: 1,
+);
+
+// Hay una forma de hacer testing para ver si nuestro Map contiene el key que le estamos pasando por ejemplo
+.text1{
+    // pasamos el map y el key como parametros
+    @if map-has-key($fs, key-value) {
+        content: 'map has key';  //si tenemos el key-value entrara aqui
+    } @else{
+        content: 'Map has not this key'; //si NO tenemos el key-value entrara aqui
+    }
+}
+
+//Tambien los Map nos permiten fucionar mapas con lo siguiente
+$merged: map-merge($fs, $zindex); // nos tramemos nuestros dos mapas que creamos en la parte superior
+
+.text2{
+    font-size: map-get($merged, normal); 
+}
+
+// CASOS DE USO
+// 1. Cómo Recorrer un Mapa y Generar Clases
+// Los mapas también pueden ser útiles sin las funciones que los acompañan.
+// Por ejemplo, puede realizar un bucle a través de su mapa, definir los parámetros con los valores que espera
+// y a continuación, agregar el nombre del mapa Sass. Al hacer esto es posible trabajar con diferentes tipos de valores.
+
+$icons:(
+    error: $color-error,
+    success: $color-success,
+    warning: $color-warning,
+    info: $color-info,
+);
+
+    //clave valor     map   
+@each $key, $value in $icons {
+        .container-list--#{$key} { //con el # estamos escapando de que es una variable
+            color: $value;    
+        }
+}
+// Esta es una manera realmente eficiente de cargar clases
+
+
+//Otro caso de uso es con los z-index
+    @function layer($key) {
+
+        @if map-has-key($zindex, $key) {
+            @return map-get($zindex, $key);  
+        }
+        
+        @warn "The key #{$key} is not in the map ’$zindex"; //con el # estamos escapando de que es una variable
+        @return null; //aqui podemos retornar un mensaje de que no encontro nada
+    };
+
+.name2{
+    z-index: layer(father);
+}

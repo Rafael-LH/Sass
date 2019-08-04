@@ -1,5 +1,6 @@
 @mixin FlexContent($display, $justify, $wrap, $margin) {
     max-width: $pageMaxWidth;
+    padding: $basePaddingxy;
     margin: $margin;
     display: $display; 
     justify-content: $justify; 
@@ -9,6 +10,7 @@
 
 @mixin respond-to($sm) {
 
+    // los mixin nos permiten crear bloques de contenido como el que tenemos acontinuacion
     @media screen and (max-width: $sm){
            @content;
     }
